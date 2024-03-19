@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Layout } from "./components/Layouts/Layout";
 import { Suspense, lazy } from "react";
-import { ContentWrapper } from "./components/Layouts/ContentWrapper";
+import { ContentWrapper } from "./components/Layouts/Content/ContentWrapper";
 import { lazyLoad } from "./helper/lazy-load";
 
 const Home = lazy(() => import("./pages/Home"));
