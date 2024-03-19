@@ -6,7 +6,7 @@ const AboutDetail = lazy(() =>  import("../components/About/AboutDetail").then((
 
 export const About = () => {
   const [showDetail, setShowDetail] = useState(false);
-  
+
   const onToggleClick = async () => {
     setShowDetail((prev) => !prev);
   };
@@ -15,11 +15,9 @@ export const About = () => {
     <div>
       <h1>About Page</h1>
       <Button onClick={onToggleClick}>Toggle About Detail</Button>
-     <div>
-     <Suspense fallback={<Spin />}>
-        {showDetail && <AboutDetail />}
-      </Suspense>
-     </div>
+      <div>
+        <Suspense fallback={<Spin />}>{showDetail && <AboutDetail />}</Suspense>
+      </div>
     </div>
   );
 };

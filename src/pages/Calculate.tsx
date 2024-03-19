@@ -1,8 +1,7 @@
-import { Button} from "antd";
-
+import { Button } from "antd";
 
 export const Calculate = () => {
-  const onToggleSum = async () => {
+  const onToggleSum = () => {
     import("../helper/sum").then((module: any) => {
       alert(module.sum(1, 1));
     });
@@ -16,9 +15,9 @@ export const Calculate = () => {
   return (
     <>
       <h1>Calculate Page</h1>
-      <div style={{ display: 'flex', columnGap: 10}}>
-      <Button onClick={onToggleSum}>Sum 1 + 1</Button>
-      <Button onClick={onToggleSum2}>Sum 8 + 8</Button>
+      <div style={{ display: "flex", columnGap: 10 }}>
+        <Button onClick={onToggleSum}>Sum 1 + 1</Button>
+        <Button onClick={onToggleSum2}>Sum 8 + 8</Button>
       </div>
     </>
   );
