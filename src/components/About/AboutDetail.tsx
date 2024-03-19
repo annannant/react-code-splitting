@@ -1,4 +1,4 @@
-export const ReportDetail = () => {
+export const AboutDetail = () => {
   return (
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.

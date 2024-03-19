@@ -4,10 +4,9 @@ import { Container } from "./Sidebar.styles"
 export const Sidebar = () => {
   return <Container>
     <ul>
-      <li><Link to="/home">Home</Link></li>
-      <li><Link to="/team-task">Team-Task</Link></li>
-      <li><Link to="/follow-up">Follow up</Link></li>
-      <li><Link to="/report">Report</Link></li>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/calculate">Calculate</Link></li>
     </ul>
   </Container>
 }

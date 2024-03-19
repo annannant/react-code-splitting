@@ -5,12 +5,8 @@ import { ContentWrapper } from "./components/Layouts/ContentWrapper";
 import { lazyLoad } from "./helper/lazy-load";
 
 const Home = lazy(() => delay(1000).then(() => import("./pages/Home")));
-const TeamTask = lazy(() => delay(1000).then(() => import("./pages/TeamTask")));
-
-const FollowUp = lazyLoad('pages/FollowUp');
-const Report = lazyLoad('pages/Report', 'Report');
-// const FollowUp = lazy(() => delay(1000).then(() => import("./pages/FollowUp")));
-// const Report = lazy(() => delay(1000).then(() => (import("./pages/Report").then((module) => ({ default: module.Report })))));
+const About = lazy(() => delay(1000).then(() => (import("./pages/About").then((module) => ({ default: module.About })))));
+const CalculatePage = lazyLoad('pages/Calculate', 'Calculate');
 
 function App() {
   return (
@@ -19,11 +15,9 @@ function App() {
       <Switch>
         <ContentWrapper>
           <Suspense fallback={<>Loading...</>}>
-            <Route path="/" component={() => <></>} />
-            <Route path="/home" component={() => <Home />} />
-            <Route path="/team-task" component={() => <TeamTask />} />
-            <Route path="/follow-up" component={() => <FollowUp />} />
-            <Route path="/report" component={() => <Report />} />
+            <Route exact path="/" component={() => <Home />} />
+            <Route path="/about" component={() => <About />} />
+            <Route path="/calculate" component={() => <CalculatePage />} />
           </Suspense>
         </ContentWrapper>
       </Switch>
