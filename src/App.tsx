@@ -4,8 +4,8 @@ import { Suspense, lazy } from "react";
 import { ContentWrapper } from "./components/Layouts/ContentWrapper";
 import { lazyLoad } from "./helper/lazy-load";
 
-const Home = lazy(() => delay(1000).then(() => import("./pages/Home")));
-const About = lazy(() => delay(1000).then(() => (import("./pages/About").then((module) => ({ default: module.About })))));
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => (import("./pages/About").then((module) => ({ default: module.About }))));
 const CalculatePage = lazyLoad('pages/Calculate', 'Calculate');
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
       <Switch>
         <ContentWrapper>
           <Suspense fallback={<>Loading...</>}>
-            <Route exact path="/" component={() => <Home />} />
-            <Route path="/about" component={() => <About />} />
-            <Route path="/calculate" component={() => <CalculatePage />} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/calculate" component={CalculatePage} />
           </Suspense>
         </ContentWrapper>
       </Switch>

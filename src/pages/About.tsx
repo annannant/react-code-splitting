@@ -1,8 +1,8 @@
-import { Button, Spin } from "antd";
+import { Button,  Spin } from "antd";
 
 import { Suspense, lazy, useState } from "react";
 
-const AboutDetail = lazy(() => import("../components/About/AboutDetail").then((module) => ({ default: module.AboutDetail })));
+const AboutDetail = lazy(() =>  import("../components/About/AboutDetail").then((module) => ({ default: module.AboutDetail })));
 
 export const About = () => {
   const [showDetail, setShowDetail] = useState(false);
@@ -15,9 +15,11 @@ export const About = () => {
     <div>
       <h1>About Page</h1>
       <Button onClick={onToggleClick}>Toggle About Detail</Button>
-      <Suspense fallback={<Spin />}>
+     <div>
+     <Suspense fallback={<Spin />}>
         {showDetail && <AboutDetail />}
       </Suspense>
+     </div>
     </div>
   );
 };
